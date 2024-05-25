@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="Mega_NeRF++_Net.css">
+    <style>
+        @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+   
+  /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+  @media screen and (max-width: 400px) {
+    .guide_a a {
+      float: none;
+      width: 100%;
+    }
+  }
+    </style>
+    <title>Mega-NeRF++: An Improved Scalable NeRFs for High-resolution Photogrammetric Images</title>
+</head>
+<body>
+  <!-- 头部导航栏 -->
+  <ul class = "HeadMenu">
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Introduction">Introduction</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Workflow">Workflow</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Data Downloading">Data Downloading</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Methodology">Methodology</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Experiments">Experiments</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#Conclusion">Conclusion</a></li>
+    <li class="HeadMenu_Content"><a class="LinkTo" href="#About us">About us</a></li>
+  </ul>
+
+  <!-- 占位符 -->
+  <div class = "Empty_50"></div>
+
+  <!-- 主标题以及背景图片 -->
+  <div class = "HeadPicture">
+    <div class = "HeadWord">
+      <!-- 占位符 -->
+      <div class = "Empty_50"></div>
+      Mega-NeRF++: An Improved Scalable NeRFs for<br>
+      High-resolution Photogrammetric Images
+      <!-- 占位符 -->
+      <div class = "Empty_20"></div>
+      <p class = "HeadWord">YiWei Xu; Xin Wang; TengFei Wang; ZongQian Zhan</p>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <div class = "WhitePart">
+    <div class = "MainText_Title"><br><section id = "Introduction">Introduction</section><br></div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      Currently, the emergence of NeRF has already made the neuron-based implicit representation of any 3D scene become possible, 
+      and this technology has already been demonstrated to be able to achieve good rendering results when scene is controlled and image resolution is not that high. 
+      <br><br>
+      But for the photogrammetric dataset, it usually contains large number of high-resolution UAV images and it usually covers wide ground. 
+      Under the limitations of training time cost and computational resources, it is hard for origin NeRF to learn 3D information from the photogrammetric dataset directly.
+      <br><br>
+      Mega-NeRF presented partitioning method to solve the problem. However, Mega-NeRF adopts independent parallel training strategy so that the overlapping information between any two adjacent sub-model are not considered.
+      It is not difficult to notice that different sub-model tends to give different rendering results in the overlapping region. as shown in the figure below.
+      <br><br>
+      Therefore, Mega-NeRF++ hope to improve the training strategy and loss function used in the Mega-NeRF to achieve better rendering results based on the consistency of rendering results of any adjacent sub-models in the overlapping region.
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "PictureContainer1">
+      <img src="Pictures/Merge_Result.png">
+    </div>
+  </div>
+
+  <!-- Workflow -->
+  <div class = "GreyPart">
+    <div class = "MainText_Title"><br><section id = "Workflow">The workflow</section><br><br></div>
+  </div>
+  <div class = "GreyPart">
+    <img src="Pictures/Workflow.jpg" width = "850" height = "560">
+  </div>
+  <div class = "GreyPart">
+    <div class = "MainText_Content">
+      <br>
+      1. Data Pre-Processing:<br>
+      <ul>
+        <li>Generate parse point cloud and Pos information using COLMAP.</li>
+        <li>Partition large-scale scene into sub-blocks.</li>
+      </ul>
+      2. Mega-NeRF Training:<br>
+      <ul>
+        <li>Independent parallel training method</li>
+        <li>Train each sub-model for a certain iteration</li>
+      </ul>
+      3. Mega-NeRF++ Optimization:<br>
+      <ul>
+        <li>Alternative Training method</li>
+        <li>New training strategy and loss function</li>
+        <li>Focus on the consistency of rendering result in overlapping region</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Data Downloading -->
+  <div class = "WhitePart">
+    <div class = "MainText_Title"><br><section id = "Data Downloading">Data Downloading</section><br></div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      For a more intuitive comparison between Mega-NeRF++ and the original Mega-NeRF, 
+      several datasets previously employed in Mega-NeRF are leveraged, 
+      including Mill 19 dataset which consists of two scenes (buildings and rubble) and Quad 6k image dataset captured from a large-scale scene for SfM.
+      <br><br>
+      pictures below show part of images:<br><br>
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/Dataset.jpg" width = "1100" height = "450">
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      Mill 19 - Rubble is a photogrammetric image dataset captured by UAV, and QUAD 6K is a close-range photogrammetric image dataset. 
+      We will conduct experiments on these two datasets separately to verify the validity of our approach.
+      <br><br>
+      If you want to download these datasets, you can go to the corresponding page by following the URL below:
+      <br><br>
+      <ul>
+        <li><a class = "LinkToBeDOI" href = "https://github.com/cmusatyalab/mega-nerf"><p>Mega-NeRF and Dataset Mill 19</p></a></li>
+        <li><a class = "LinkToBeDOI" href = "http://vision.soic.indiana.edu/disco_files/ArtsQuad_dataset.tar"><p>Dataset QUAD 6K</p></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class = "GreyPart">
+    <div class = "MainText_Title"><br><section id = "Methodology">Methodology</section><br></div>
+  </div>
+  <div class = "GreyPart">
+    <div class = "MainText_Content">
+      <br>
+      Here we show how we train each sub-model during the experiments. We first individually train each sub-model for a certain iteration using original Mega-NeRF method, 
+      and then we adopt alternative training method: individual training and joint training are alternated applied until pre-set iterations are achieved. 
+      Both of them will be used at least 20 times in our project. Finally, appearance matching method, which is proposed by Block-NeRF, is also applied for comparison.
+      <br><br>
+      Figure shown below explains how we train a Mega-NeRF++ model:<br><br>
+    </div>
+  </div>
+  <div class = "GreyPart">
+    <img src="Pictures/Methodology.png" width = "900" height = "300">
+  </div>
+  <div class = "GreyPart">
+    <div class = "MainText_Content">
+      <ul>
+        <li>Individual Training: Train sub-models using original Mega-NeRF method</li>
+        <li>Joint Training: Train adjacent sub-models based on the consistency of rendering result in the overlapping region using new training strategy and loss function</li>
+        <li>Appearance matching: Proposed by Block-NeRF, also used for balancing the light condition of each image</li>
+      </ul>
+    </div>
+  </div>
+  <div class = "GreyPart">
+    <div class = "MainText_Content">
+      <br>
+      We also use hybrid rendering strategy for boosting the rendering result. For any images containing both overlapping region and non-overlapping region, 
+      the rendering result of Mega-NeRF++ model will be used for the part of overlapping region, 
+      while the rendering result of original Mega-NeRF model will be used for the part of non-overlapping region.
+      <br><br>
+      Figure shown below explains how we render an imgae:<br><br>
+    </div>
+  </div>
+  <div class = "GreyPart">
+    <img src="Pictures/Hybrid Rendering.png" width = "800" height = "350">
+  </div>
+  <div class = "GreyPart">
+    <br><br>
+  </div>
+
+  <!-- Experiment -->
+  <div class = "WhitePart">
+    <div class = "MainText_Title"><br><section id = "Experiments">Experiments</section><br></div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      We first performed the ablation experiment, it contains three parts:
+      <br>
+      <ul>
+        <li>Mega-NeRF++: Use both optimization strategy and hybrid rendering method</li>
+        <li>Mega-NeRF++_no_merge: Only use optimization but no hybrid rendering method</li>
+        <li>Mega-NeRF: The original Nega-NeRF method</li>
+      </ul>
+      Figures and tables below show the experiment results:
+      <br>
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/ablation1.png" width = "900" height = "300">
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/ablation2.png" width = "900" height = "300">
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/ablation1-1.png" width = "900" height = "150">
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/ablation2-1.png" width = "900" height = "150">
+  </div>
+  <div class = "WhitePart">
+    <br>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      We also performed the comparison experiment, we mainly compared our Mega-NeRF++ with the appearance matching method proposed in Block-NeRF. 
+      In the experiment, Mega-NeRF_am/Mega-NeRF++_am means using appearance matching method to additionally optimize the Mega-NeRF/Mega-NeRF++ model for another 10000 iterations.
+      <br>
+      The results of comparison experiment are shown below:
+      <br><br>
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/Comparison.png" width = "900" height = "300">
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      We also show the rendering results of different models for comparison. At the same time, 
+      we have marked the areas where there is significant improvement in order to show the advantages of our method compared to other methods.
+      <br><br>
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/rendering1.png" width = "900" height = "500">
+  </div>
+  <div class = "WhitePart">
+    <img src="Pictures/rendering2.png" width = "900" height = "500">
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      <br>
+      According to our experiment, we can draw the following conclusions:<br>
+      <ul>
+        <li>Ablation studies: Both optimization strategy and hybrid rendering method are very effective in improving model performance.</li>
+        <li>Comparison: Mega-NeRF++ can achieve better rendering results compare with original Mega-NeRF.</li>
+        <li>Appearance matching: It is effective when facing close-range photogrammetric image dataset, but the improvement is limited in the face of UAV photogrammetric image dataset.</li>
+      </ul>
+      <br><br>
+    </div>
+  </div>
+
+  <!-- Conclusion -->
+  <div class = "GreyPart">
+    <div class = "MainText_Title"><br><section id = "Conclusion">Conclusion</section><br></div>
+  </div>
+  <div class = "GreyPart">
+    <div class = "MainText_Content">
+      <br>
+      This paper presents an improved method, Mega-NeRF++, for boosting the original large-scale Mega-NeRF based on the consistency of overlapping regions between adjacent sub-models.
+      This method successfully minimizes deviations between Mega-NeRF++ predicted rendering results and ground truth, 
+      while mitigating color inconsistency errors that may arise during rendering in overlapping regions of adjacent sub-models.
+      Our Mega-NeRF++ can qualitatively render better images with higher fidelity and quantitively have higher PNSR and SSIM compare to original Mega-NeRF. 
+      <br><br>
+      If you want to get more details about our project, Please view our full paper via the URL below.
+      <br><br>
+      (If you wish to use the data we provide, please cite our paper in your research, thank you)
+      <br><br>
+    </div>
+  </div>
+  <div class = "GreyPart">
+    <img src="Pictures/QR_code.png" width = "400" height = "400">
+  </div>
+  <div class = "GreyPart">
+    <a class = "LinkToBeDOI" href = "https://isprs-archives.copernicus.org/articles/XLVIII-1-2024/769/2024/"><p>Mega-NeRF++: An Improved Scalable NeRFs for High-resolution Photogrammetric Images<br><br></p></a>
+  </div>
+
+  <!-- About us -->
+  <div class = "WhitePart">
+    <div class = "MainText_Title"><br><section id = "About us">About us</section><br></div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content">
+      If you have any questions or advice, you can contact us through following address:
+      <ul>
+        <li>xywjohn_sgg2020@whu.edu.cn, YiWei Xu, WuHan University</li>
+      </ul>
+      In addition, this project was collaboratively completed by multiple individuals, 
+      and we are deeply grateful for the contributions and support from the following members and organizations:
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "MainText_Content_End">
+      <br>
+      <div class = "tooltip">Y.W. Xu<div class="tooltiptext">
+        Wu Han University, China
+      </div></div>
+      , <div class = "tooltip">W. Xin*<div class="tooltiptext">
+        Wu Han University, China
+      </div></div>
+      , <div class = "tooltip">T.F. Wang<div class="tooltiptext">
+        Wu Han University, China
+      </div></div>
+      , <div class = "tooltip">Z.Q. Zhan<div class="tooltiptext">
+        Wu Han University, China
+      </div></div>
+    </div>
+  </div>
+  <div class = "WhitePart">
+    <div class = "Empty_50"></div>
+  </div>
+</body>
+</html>

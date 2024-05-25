@@ -1,0 +1,145 @@
+ul.guide_ul
+{
+    list-style-type: none;
+    margin:auto;
+    padding:0;
+    overflow:hidden;
+    background-color: rgb(33, 154, 6);
+    width:100%;
+    height:50px;
+    position: fixed;
+    top:80px;
+    left:0;
+}
+li.guide_li
+{
+    float:left;
+    min-width: 70px;
+}
+a.guide_a
+{
+    display:block;
+    margin:0;
+    padding:13px;
+    background-color: rgb(33, 154, 6);
+    color:white;
+    text-decoration: none;
+    height:50px;
+    text-align: center;
+}
+a.guide_a:hover
+{
+    background-color: darkblue;
+    color:aliceblue;
+}
+span.guide_span
+{
+    display:block;
+    margin:0;
+    padding:13px;
+    background-color: darkblue;
+    color:aliceblue;
+    text-align: center;
+    height:50px;
+}
+div.head1
+{
+    width:100%;
+    height: 80px;
+    background-color: whitesmoke;
+    margin:auto;
+    padding:0px;
+    position: fixed;
+    top:0;
+    left:0;
+}
+div.head_word
+{
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-left: 28px;
+    color:rgb(33, 154, 6);
+    font-size: 30px;
+    font-weight: 400;
+}
+div.final
+{
+    margin:auto;
+    position:relative;
+    top:30px;
+    width:70%;
+    height:fit-content; 
+    border-radius: 10px;
+    border-color: darkgreen;
+    border-style: solid;
+    background-color: aquamarine;
+}
+body
+{
+    background-image: url('whu1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;    
+    background-size: cover;
+}
+div.sticky
+{
+    position: fixed;
+    width:15%;
+    top:130px;
+    left:0;
+    min-width: 120px;
+}
+ul.menu
+{
+    list-style-type:none;
+    margin:auto;
+    width:100%;
+    height: fit-content;
+    float:left;
+    padding:0;
+    background-color:rgb(238, 238, 238);
+    min-height: 10000px;
+}
+li.menu
+{
+    width:100%;
+    height:70px;
+    float:left;
+    padding:0;
+    margin:0;
+}
+a.menu
+{
+    display:block;
+    margin:0;
+    height:70px;
+    text-decoration: none;
+    background-color:rgb(238, 238, 238);
+    color:black;
+    text-align: center;
+    line-height: 61px;
+}
+a.menu:hover{
+    background-color: rgb(70,70,70);
+    color:white;
+}
+@media(max-width:500px)
+{
+    div.head_word
+    {
+        vertical-align: middle;
+        padding-top: 17px;
+        padding-left: 28px;
+        color:rgb(33, 154, 6);
+        font-size: 20px;
+        font-weight: 400;
+    }
+    div.sticky
+    {
+        position: fixed;
+        width:20%;
+        top:130px;
+        left:0;
+        min-width: 100px;
+    }
+}
