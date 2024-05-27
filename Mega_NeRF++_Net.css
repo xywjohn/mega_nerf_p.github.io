@@ -256,4 +256,148 @@ div.PictureContainer1 img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover the container */
-  }
+}
+
+div.PictureContainer2{
+    width: 60vw; /* 50% of viewport width */
+    height: calc(60vw / 875 * 536); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer3{
+    width: 60vw; /* 50% of viewport width */
+    height: calc(60vw / 3812 * 1573); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer4{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 3986 * 1404); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer5{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 1693 * 727); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer6{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 3241 * 1169); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer7{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 3276 * 1133); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer7 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer8{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 3205 * 594); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer8 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer9{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 3205 * 594); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer9 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer10{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 4347 * 1676); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer10 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer11{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 2393 * 1423); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer11 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer12{
+    width: 50vw; /* 50% of viewport width */
+    height: calc(50vw / 2393 * 1423); /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer12 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+div.PictureContainer13{
+    width: 30vw; /* 50% of viewport width */
+    height: 30vw; /* 50% of viewport width, divided by 2 for height */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+}
+
+div.PictureContainer13 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
